@@ -1,15 +1,10 @@
-// TASK - ZJ
+/* ZL-TASK:
 
-function reduceNestedArray(arr: any[]): number {
-	return arr.reduce((num: number, curr: any) => {
-		if (Array.isArray(curr)) {
-			return num + reduceNestedArray(curr);
-		} else if (typeof curr === 'number') {
-			return num + curr;
-		} else {
-			return num;
-		}
-	}, 0);
+Shunday function yozing, u parametrda berilgan stringni kebab casega otkazib qaytarsin. Bosh harflarni kichik harflarga ham otkazsin.
+MASALAN: stringToKebab(“I love Kebab”) return “i-love-kebab”
+*/
+function stringToKebab(inputString: string): any {
+	const kebabstring = inputString.toLowerCase().replace(/\s+/g, '-');
+	return kebabstring;
 }
-
-console.log(reduceNestedArray([1, [1, 2, [4]]]));
+console.log(stringToKebab('I love Kebab'));
