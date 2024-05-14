@@ -37,6 +37,7 @@ const MemberSchema = new Schema(
 		},
 		memberImage: {
 			type: String,
+			default: '',
 		},
 		memberAddress: {
 			type: String,
@@ -80,7 +81,7 @@ const MemberSchema = new Schema(
 			type: Number,
 			default: 0,
 		},
-		memberWarings: {
+		memberWarnings: {
 			type: Number,
 			default: 0,
 		},
