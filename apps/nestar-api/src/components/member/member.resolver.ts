@@ -20,13 +20,13 @@ export class MemberResolver {
 			throw new InternalServerErrorException(err);
 		}
 	}
-	@Mutation(() => String)
+	@Mutation(() => Member)
 	@UsePipes(ValidationPipe)
-	public async login(@Args('input') input: LoginInput): Promise<String> {
+	public async login(@Args('input') input: LoginInput): Promise<Member> {
 		try {
 			console.log('Mutation: login');
 			console.log('input:', input);
-			return this.memberService.login();
+			return this.memberService.login(input);
 		} catch (err) {
 			console.log('Error, login', err);
 			throw new InternalServerErrorException(err);
