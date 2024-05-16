@@ -7,6 +7,9 @@ import { ApolloDriver } from '@nestjs/apollo';
 import { AppResolver } from './app.resolver';
 import { ComponentsModule } from './components/components.module';
 import { DatabaseModule } from './database/database.module';
+import { error } from 'console';
+import { T } from './libs/types/common';
+import { Message } from './libs/enums/common.enum';
 @Module({
 	imports: [
 		ConfigModule.forRoot(),
@@ -15,6 +18,16 @@ import { DatabaseModule } from './database/database.module';
 			playground: true,
 			uploads: false,
 			autoSchemaFile: true,
+			formatError: (error: T) => {
+				console.log('error:', error);
+				const graphqlFormattedError = {
+					code: error?.extensions.code,
+					Message:
+						error?.extensions?.exception?.response?.message || error?.extensions?.response?.message || error?.message,
+				};
+				console.log('GRAPHQL GLOBAL ERR:', graphqlFormattedError);
+				return graphqlFormattedError;
+			},
 		}),
 		ComponentsModule,
 		DatabaseModule,
