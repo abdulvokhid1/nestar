@@ -49,7 +49,7 @@ export class MemberUpdate {
 	@IsOptional()
 	@Length(3, 100)
 	@Field(() => String, { nullable: true })
-	memberDesk?: string;
+	memberDesc?: string;
 
 	deleteAt?: Date;
 }
