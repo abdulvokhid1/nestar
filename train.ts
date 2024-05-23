@@ -1,15 +1,25 @@
-/*ZM-TASK:
+/*ZP-TASK:
 
-Shunday function yozing, u function parametrga berilgan raqamlarni orqasiga ogirib qaytarsin.
-MASALAN: reverseInteger(123456789) return 987654321
-
+Shunday function yozing, u parametridagi array ichida eng kop takrorlangan raqamni topib qaytarsin.
+MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 4
 */
 
-function reverseInteger(num: number): number {
-	const numStr: string = num.toString();
+function majorityElement(arr: number[]): number | null {
+	const elementCount: { [key: number]: number } = {};
+	let maxCount = 0;
+	let majorityElement: number | null = null;
 
-	const reversedStr: string = numStr.split('').reverse().join('');
-	const reversedNum: number = parseInt(reversedStr);
-	return reversedNum;
+	for (const num of arr) {
+		elementCount[num] = (elementCount[num] || 0) + 1;
+
+		if (elementCount[num] > maxCount) {
+			maxCount = elementCount[num];
+			majorityElement = num;
+		}
+	}
+
+	return majorityElement;
 }
-console.log(reverseInteger(123456789));
+
+const result = majorityElement([1, 2, 3, 4, 5, 4, 3, 4, 3, 3, 3]);
+console.log(result);
