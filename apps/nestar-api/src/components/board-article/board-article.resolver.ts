@@ -45,7 +45,7 @@ export class BoardArticleResolver {
 	@UseGuards(AuthGuard)
 	@Mutation(() => BoardArticle)
 	public async updateBoardArticle(
-		@Args('inputt') input: BoardArticleUpdate,
+		@Args('input') input: BoardArticleUpdate,
 		@AuthMember('_id') memberId: ObjectId,
 	): Promise<BoardArticle> {
 		console.log('Mutation: updateBoardArticle');
