@@ -7,7 +7,7 @@ import LikeSchema from '../../schemas/Like.model';
 	imports: [
 		MongooseModule.forFeature([
 			{
-				name: 'like',
+				name: 'Like',
 				schema: LikeSchema,
 			},
 		]),
