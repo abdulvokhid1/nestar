@@ -90,7 +90,7 @@ export class Member {
 	meLiked?: MeLiked[];
 
 	@Field(() => [MeFollowed], { nullable: true })
-	mefollowed?: MeFollowed[];
+	meFollowed?: MeFollowed[];
 }
 
 @ObjectType()

@@ -100,7 +100,7 @@ export class MemberService {
 			targetMember.meLiked = await this.likeService.checkLikeExistaence(likeInput);
 
 			// meFollowed
-			targetMember.mefollowed = await this.checkSubscription(memberId, targetId);
+			targetMember.meFollowed = await this.checkSubscription(memberId, targetId);
 		}
 		return targetMember;
 	}
