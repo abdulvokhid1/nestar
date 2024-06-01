@@ -15,6 +15,7 @@ import { MemberModule } from '../member/member.module';
 			},
 		]),
 		AuthModule,
+
 		MemberModule,
 	],
 	providers: [FollowResolver, FollowService],
