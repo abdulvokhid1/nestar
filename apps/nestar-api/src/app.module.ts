@@ -10,6 +10,7 @@ import { DatabaseModule } from './database/database.module';
 import { error } from 'console';
 import { T } from './libs/types/common';
 import { Message } from './libs/enums/common.enum';
+import { SocketModule } from './socket/socket.module';
 @Module({
 	imports: [
 		ConfigModule.forRoot(),
@@ -31,6 +32,7 @@ import { Message } from './libs/enums/common.enum';
 		}),
 		ComponentsModule,
 		DatabaseModule,
+		SocketModule,
 	],
 	controllers: [AppController],
 	providers: [AppService, AppResolver],
